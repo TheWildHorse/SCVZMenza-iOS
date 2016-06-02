@@ -19,11 +19,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(applicationDidBecomeActive),
+            name: UIApplicationDidBecomeActiveNotification,
+            object: nil)
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 125.0
         tableView.delegate = self
-        
+    }
+    
+    func applicationDidBecomeActive(notification: NSNotification) {
         self.loadMenus()
     }
 
