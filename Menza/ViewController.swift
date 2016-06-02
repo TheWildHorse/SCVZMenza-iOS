@@ -20,6 +20,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 125.0
         tableView.delegate = self
         
         self.loadMenus()
@@ -41,7 +43,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cellIdentifier = "MenuTableViewCell"
         let cell: MenuTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! MenuTableViewCell
 
-        cell.MenuNameLabel.text = menus![indexPath.row].name;
         cell.MenuDescriptionLabel.text = menus![indexPath.row].description;
         if(menus![indexPath.row].name == "Vegeterian") {
             cell.MenuImageIcon.image = UIImage(named: "Vegeterian");

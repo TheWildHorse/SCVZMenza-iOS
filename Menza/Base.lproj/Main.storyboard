@@ -21,24 +21,15 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MenuTableViewCell" rowHeight="150" id="nw6-Gd-Dnr" customClass="MenuTableViewCell" customModule="Menza">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MenuTableViewCell" id="nw6-Gd-Dnr" customClass="MenuTableViewCell" customModule="Menza">
                                         <rect key="frame" x="0.0" y="28" width="600" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nw6-Gd-Dnr" id="iQ7-i0-Ybi">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cp-YF-Jiy">
-                                                    <rect key="frame" x="8" y="8" width="584" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="cUa-2Z-y74"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <color key="textColor" red="0.74117647060000003" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ll7-tm-XfT">
-                                                    <rect key="frame" x="13" y="37" width="515" height="105"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ll7-tm-XfT">
+                                                    <rect key="frame" x="13" y="11" width="515" height="128"/>
                                                     <string key="text">Juha Glavno jelo
 Prilog
 Salata
@@ -56,39 +47,17 @@ Desert</string>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="btm-tB-Xdp" firstAttribute="trailing" secondItem="5cp-YF-Jiy" secondAttribute="trailing" id="5Ge-kb-8aL"/>
-                                                <constraint firstItem="btm-tB-Xdp" firstAttribute="centerY" secondItem="iQ7-i0-Ybi" secondAttribute="centerY" id="8fg-fQ-6GE"/>
-                                                <constraint firstItem="Ll7-tm-XfT" firstAttribute="top" secondItem="5cp-YF-Jiy" secondAttribute="bottom" constant="8" id="BjS-hf-Gml"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="btm-tB-Xdp" secondAttribute="trailing" constant="6" id="EJZ-jj-BLr"/>
-                                                <constraint firstItem="5cp-YF-Jiy" firstAttribute="top" secondItem="iQ7-i0-Ybi" secondAttribute="topMargin" id="FdC-s5-h1l"/>
-                                                <constraint firstItem="btm-tB-Xdp" firstAttribute="leading" secondItem="Ll7-tm-XfT" secondAttribute="trailing" constant="8" id="HWw-39-x0v"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="btm-tB-Xdp" secondAttribute="trailing" constant="6" id="I3K-PE-pV0"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="5cp-YF-Jiy" secondAttribute="trailing" id="Pvv-iy-MCY"/>
-                                                <constraint firstItem="5cp-YF-Jiy" firstAttribute="leading" secondItem="iQ7-i0-Ybi" secondAttribute="leadingMargin" id="Qav-J8-K4Y"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Ll7-tm-XfT" secondAttribute="trailing" constant="-8" id="YN4-Cs-LhW"/>
-                                                <constraint firstItem="5cp-YF-Jiy" firstAttribute="leading" secondItem="iQ7-i0-Ybi" secondAttribute="leadingMargin" id="aT4-OD-Wiw"/>
-                                                <constraint firstItem="btm-tB-Xdp" firstAttribute="leading" secondItem="Ll7-tm-XfT" secondAttribute="trailing" constant="14" id="ldJ-rM-NeH"/>
-                                                <constraint firstItem="Ll7-tm-XfT" firstAttribute="bottom" secondItem="iQ7-i0-Ybi" secondAttribute="bottomMargin" id="pJj-wd-vQi"/>
-                                                <constraint firstItem="btm-tB-Xdp" firstAttribute="leading" secondItem="Ll7-tm-XfT" secondAttribute="trailing" constant="8" id="t4W-U4-8CQ"/>
-                                                <constraint firstItem="Ll7-tm-XfT" firstAttribute="leading" secondItem="iQ7-i0-Ybi" secondAttribute="leadingMargin" constant="5" id="vVm-0y-ih4"/>
-                                                <constraint firstItem="5cp-YF-Jiy" firstAttribute="top" secondItem="iQ7-i0-Ybi" secondAttribute="topMargin" id="w1i-2H-lXM"/>
-                                                <constraint firstItem="5cp-YF-Jiy" firstAttribute="trailing" secondItem="iQ7-i0-Ybi" secondAttribute="trailingMargin" id="wrs-dA-SYs"/>
+                                                <constraint firstItem="Ll7-tm-XfT" firstAttribute="top" secondItem="iQ7-i0-Ybi" secondAttribute="topMargin" constant="3" id="Os1-K1-V7M"/>
+                                                <constraint firstItem="btm-tB-Xdp" firstAttribute="centerY" secondItem="iQ7-i0-Ybi" secondAttribute="centerY" id="W4Y-HL-Drj"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="btm-tB-Xdp" secondAttribute="trailing" constant="6" id="ZZW-a5-8pH"/>
+                                                <constraint firstItem="Ll7-tm-XfT" firstAttribute="leading" secondItem="iQ7-i0-Ybi" secondAttribute="leadingMargin" constant="5" id="i29-uZ-KDx"/>
+                                                <constraint firstItem="btm-tB-Xdp" firstAttribute="leading" secondItem="Ll7-tm-XfT" secondAttribute="trailing" constant="8" id="ido-0e-sUr"/>
+                                                <constraint firstItem="Ll7-tm-XfT" firstAttribute="centerY" secondItem="iQ7-i0-Ybi" secondAttribute="centerY" id="uzv-S0-XZB"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="Pvv-iy-MCY"/>
-                                                    <exclude reference="YN4-Cs-LhW"/>
-                                                    <exclude reference="5Ge-kb-8aL"/>
-                                                    <exclude reference="EJZ-jj-BLr"/>
-                                                    <exclude reference="ldJ-rM-NeH"/>
-                                                    <exclude reference="t4W-U4-8CQ"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="MenuDescriptionLabel" destination="Ll7-tm-XfT" id="qbZ-1n-Cf0"/>
                                             <outlet property="MenuImageIcon" destination="btm-tB-Xdp" id="3Wj-F4-HmN"/>
-                                            <outlet property="MenuNameLabel" destination="5cp-YF-Jiy" id="hgE-CU-oaC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
