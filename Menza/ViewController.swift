@@ -8,14 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DatePickerViewControllerDelegate {
     
-    var menus:Array<Menu>?
-    var menusWrapper:MenusWrapper? // holds the last wrapper that we've loaded
+    var availableDays:Array<MenusWrapper>?
+    var selectedDay:MenusWrapper?
+    var tableViewMenus:Array<Menu>?
     var isDataLoading = false
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mealPicker: UISegmentedControl!
+    @IBOutlet weak var dateLabel: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func applicationDidBecomeActive(notification: NSNotification) {
         self.loadMenus()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "DatePickerSegue" {
+            if let destination = segue.destinationViewController as? DatePickerViewController {
+                destination.availableDays = self.availableDays
+                destination.delegate = self
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,21 +52,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let menus = self.menus else {
+        guard let tableViewMenus = self.tableViewMenus else {
             return 0
         }
-        return menus.count
+        return tableViewMenus.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "MenuTableViewCell"
         let cell: MenuTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! MenuTableViewCell
 
-        cell.MenuDescriptionLabel.text = menus![indexPath.row].description;
-        if(menus![indexPath.row].name == "Vegeterian") {
+        cell.MenuDescriptionLabel.text = tableViewMenus![indexPath.row].description;
+        if(tableViewMenus![indexPath.row].name == "Vegeterian") {
             cell.MenuImageIcon.image = UIImage(named: "Vegeterian");
         }
-        else if(menus![indexPath.row].name == "Additional") {
+        else if(tableViewMenus![indexPath.row].name == "Additional") {
             cell.MenuImageIcon.image = UIImage(named: "Additional");
         }
         else {
@@ -67,7 +78,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func loadMenus() {
         isDataLoading = true
-        Menu.getMenus { wrapper, error in
+        MenusFetcherService.getMenus { wrappers, error in
             guard error == nil else {
                 self.isDataLoading = false
                 let alert = UIAlertController(title: "Error",
@@ -77,25 +88,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.presentViewController(alert, animated: true, completion: nil)
                 return
             }
-            self.addMenusFromWrapper(wrapper)
+            self.availableDays = wrappers
+            self.selectedDay = wrappers?.first
+            self.mealPicker.selectedSegmentIndex = 0
             self.isDataLoading = false
+            self.refreshView()
         }
     }
     
+    func setActiveDay(index: Int) {
+        self.selectedDay = self.availableDays![index]
+        self.mealPicker.selectedSegmentIndex = 0
+        self.refreshView()
+    }
     
-    func addMenusFromWrapper(wrapper: MenusWrapper?) {
-        self.menusWrapper = wrapper
+    func refreshView() {
         if(mealPicker.selectedSegmentIndex == 0) {
-            self.menus = self.menusWrapper?.lunch
+            self.tableViewMenus = self.selectedDay?.lunch
         }
         else {
-            self.menus = self.menusWrapper?.dinner
+            self.tableViewMenus = self.selectedDay?.dinner
         }
         self.tableView?.reloadData()
+        self.dateLabel.title = self.selectedDay?.date
     }
 
     @IBAction func onMealChange(sender: AnyObject) {
-        self.addMenusFromWrapper(menusWrapper)
+        self.refreshView()
     }
 
 }
