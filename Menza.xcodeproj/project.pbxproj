@@ -154,7 +154,7 @@
 				TargetAttributes = {
 					D720C94E1CDFB47A00E6A4A2 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = B2Z8J357DK;
+						DevelopmentTeam = VWTKFK37E8;
 					};
 				};
 			};
@@ -362,11 +362,14 @@
 			baseConfigurationReference = 31EAC2DA2A58DA9AFA53F392 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Menza/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "hr.from.igor-rinkovec.Menza";
+				PRODUCT_BUNDLE_IDENTIFIER = "hr.from.igor-rinkovec.menzapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -375,11 +378,14 @@
 			baseConfigurationReference = 0565F2D8848CE42AD62FEFA3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Menza/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "hr.from.igor-rinkovec.Menza";
+				PRODUCT_BUNDLE_IDENTIFIER = "hr.from.igor-rinkovec.menzapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
