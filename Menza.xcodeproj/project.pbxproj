@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB0E137DDDBF97C2AC85C957 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4F6255B07785BA1C0A1594 /* Pods.framework */; };
 		D720C9531CDFB47A00E6A4A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D720C9521CDFB47A00E6A4A2 /* AppDelegate.swift */; };
 		D720C9551CDFB47A00E6A4A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D720C9541CDFB47A00E6A4A2 /* ViewController.swift */; };
 		D720C9581CDFB47A00E6A4A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D720C9561CDFB47A00E6A4A2 /* Main.storyboard */; };
@@ -18,11 +17,13 @@
 		D7389E131CDFDDB10001BD47 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7389E121CDFDDB10001BD47 /* Menu.swift */; };
 		D7ACC8DF1D059694002C689B /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ACC8DE1D059694002C689B /* DatePickerViewController.swift */; };
 		D7ACC8E21D05C9B7002C689B /* MenusFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7ACC8E11D05C9B7002C689B /* MenusFetcherService.swift */; };
+		D7EE29601DC7DC30002856BC /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EE295F1DC7DC30002856BC /* ErrorViewController.swift */; };
+		EB508751C1EE712530BDCC0A /* Pods_Menza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A74BEAD7D8895F24509C06FA /* Pods_Menza.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0565F2D8848CE42AD62FEFA3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		31EAC2DA2A58DA9AFA53F392 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		340A3B95C3DB1C7881EDB741 /* Pods-Menza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Menza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Menza/Pods-Menza.debug.xcconfig"; sourceTree = "<group>"; };
+		A74BEAD7D8895F24509C06FA /* Pods_Menza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Menza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D720C94F1CDFB47A00E6A4A2 /* Menza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Menza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D720C9521CDFB47A00E6A4A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D720C9541CDFB47A00E6A4A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,7 +36,9 @@
 		D7389E121CDFDDB10001BD47 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		D7ACC8DE1D059694002C689B /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		D7ACC8E11D05C9B7002C689B /* MenusFetcherService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenusFetcherService.swift; sourceTree = "<group>"; };
+		D7EE295F1DC7DC30002856BC /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorViewController.swift; path = ../ErrorViewController.swift; sourceTree = "<group>"; };
 		FC4F6255B07785BA1C0A1594 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF08BD3F9F80CA175FDAF035 /* Pods-Menza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Menza.release.xcconfig"; path = "Pods/Target Support Files/Pods-Menza/Pods-Menza.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +46,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB0E137DDDBF97C2AC85C957 /* Pods.framework in Frameworks */,
+				EB508751C1EE712530BDCC0A /* Pods_Menza.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B4BBEFDE3B988E2667C6A77 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				340A3B95C3DB1C7881EDB741 /* Pods-Menza.debug.xcconfig */,
+				FF08BD3F9F80CA175FDAF035 /* Pods-Menza.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		952ECFB433170F5ACEF4E6DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				FC4F6255B07785BA1C0A1594 /* Pods.framework */,
+				A74BEAD7D8895F24509C06FA /* Pods_Menza.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -63,8 +76,8 @@
 			children = (
 				D720C9511CDFB47A00E6A4A2 /* Menza */,
 				D720C9501CDFB47A00E6A4A2 /* Products */,
-				F3DF99A7CDE04A3F947DE9E3 /* Pods */,
 				952ECFB433170F5ACEF4E6DC /* Frameworks */,
+				5B4BBEFDE3B988E2667C6A77 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +96,7 @@
 				D7389E0F1CDFDD490001BD47 /* Data */,
 				D720C9521CDFB47A00E6A4A2 /* AppDelegate.swift */,
 				D720C9541CDFB47A00E6A4A2 /* ViewController.swift */,
+				D7EE295F1DC7DC30002856BC /* ErrorViewController.swift */,
 				D720C9561CDFB47A00E6A4A2 /* Main.storyboard */,
 				D7389E0B1CDFC45E0001BD47 /* MenuTableViewCell.swift */,
 				D720C9591CDFB47A00E6A4A2 /* Assets.xcassets */,
@@ -110,15 +124,6 @@
 			name = Services;
 			sourceTree = "<group>";
 		};
-		F3DF99A7CDE04A3F947DE9E3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				31EAC2DA2A58DA9AFA53F392 /* Pods.debug.xcconfig */,
-				0565F2D8848CE42AD62FEFA3 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,12 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D720C9611CDFB47A00E6A4A2 /* Build configuration list for PBXNativeTarget "Menza" */;
 			buildPhases = (
-				1E3742E9E70F8915CB15B7ED /* Check Pods Manifest.lock */,
+				E98DFBC0A0D175B74C0DD13D /* [CP] Check Pods Manifest.lock */,
 				D720C94B1CDFB47A00E6A4A2 /* Sources */,
 				D720C94C1CDFB47A00E6A4A2 /* Frameworks */,
 				D720C94D1CDFB47A00E6A4A2 /* Resources */,
-				974F3A0450C83AB162606445 /* Embed Pods Frameworks */,
-				9D57BEA6CA1DDE74010E17A5 /* Copy Pods Resources */,
+				B2E1679AC4B20E277CCC4CF1 /* [CP] Embed Pods Frameworks */,
+				128A81E805C7AA71D6FCCBC1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,12 +154,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Igor Rinkovec";
 				TargetAttributes = {
 					D720C94E1CDFB47A00E6A4A2 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = VWTKFK37E8;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -190,49 +196,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E3742E9E70F8915CB15B7ED /* Check Pods Manifest.lock */ = {
+		128A81E805C7AA71D6FCCBC1 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Menza/Pods-Menza-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		974F3A0450C83AB162606445 /* Embed Pods Frameworks */ = {
+		B2E1679AC4B20E277CCC4CF1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Menza/Pods-Menza-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9D57BEA6CA1DDE74010E17A5 /* Copy Pods Resources */ = {
+		E98DFBC0A0D175B74C0DD13D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -247,6 +253,7 @@
 				D720C9531CDFB47A00E6A4A2 /* AppDelegate.swift in Sources */,
 				D7ACC8DF1D059694002C689B /* DatePickerViewController.swift in Sources */,
 				D7389E111CDFDD750001BD47 /* MenusWrapper.swift in Sources */,
+				D7EE29601DC7DC30002856BC /* ErrorViewController.swift in Sources */,
 				D7389E0C1CDFC45E0001BD47 /* MenuTableViewCell.swift in Sources */,
 				D7389E131CDFDDB10001BD47 /* Menu.swift in Sources */,
 			);
@@ -288,8 +295,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -311,11 +320,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -333,8 +343,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -350,17 +362,20 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		D720C9621CDFB47A00E6A4A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31EAC2DA2A58DA9AFA53F392 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 340A3B95C3DB1C7881EDB741 /* Pods-Menza.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -370,13 +385,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "hr.from.igor-rinkovec.menzapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
 		D720C9631CDFB47A00E6A4A2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0565F2D8848CE42AD62FEFA3 /* Pods.release.xcconfig */;
+			baseConfigurationReference = FF08BD3F9F80CA175FDAF035 /* Pods-Menza.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -386,6 +403,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "hr.from.igor-rinkovec.menzapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol RefreshDelegate: class {
+    func reloadData()
+}
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DatePickerViewControllerDelegate {
     
     var availableDays:Array<MenusWrapper>?
@@ -81,11 +85,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         MenusFetcherService.getMenus { wrappers, error in
             guard error == nil else {
                 self.isDataLoading = false
-                let alert = UIAlertController(title: "Error",
-                    message: "Neuspješno učitavanje: \(error?.localizedDescription)",
-                    preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alert, animated: true, completion: nil)
+                self.displayErrorScreen()
+                return
+            }
+            guard wrappers!.count != 0 else {
+                self.displayErrorScreen()
                 return
             }
             self.availableDays = wrappers
@@ -94,6 +98,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.isDataLoading = false
             self.refreshView()
         }
+    }
+    
+    func displayErrorScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: ErrorViewController = storyboard.instantiateViewControllerWithIdentifier("ErrorScreen") as! ErrorViewController
+        vc.refreshDelegate = self
+        self.presentViewController(vc, animated: false, completion: nil)
     }
     
     func setActiveDay(index: Int) {
@@ -117,5 +128,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.refreshView()
     }
 
+}
+
+extension ViewController: RefreshDelegate {
+    func reloadData() {
+        self.loadMenus()
+    }
 }
 

@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-Menza.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1388673C5AB44E8BD38D1210AAE4A64E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8972D1B3785A7CF11C5D31FB702BCB0E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EA5783E1E72DAF034F5567D9F2721A2E</key>
+		<key>F9B3A92DD18A3FC85F562B3E4DBE613A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

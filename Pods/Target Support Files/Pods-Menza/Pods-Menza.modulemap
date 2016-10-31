@@ -1,0 +1,6 @@
+framework module Pods_Menza {
+  umbrella header "Pods-Menza-umbrella.h"
+
+  export *
+  module * { export * }
+}
