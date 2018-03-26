@@ -10,23 +10,18 @@ import Foundation
 import SwiftyJSON
 import Alamofire
 
-extension Alamofire.Request {
-    func responseMenusArray(completionHandler: Response<Array<MenusWrapper>, NSError> -> Void) -> Self {
-        let responseSerializer = ResponseSerializer<Array<MenusWrapper>, NSError> { request, response, data, error in
+extension DataRequest {
+    static func responseMenusArray() -> DataResponseSerializer<Array<MenusWrapper>> {
+        return DataResponseSerializer { request, response, data, error in
             guard error == nil else {
-                return .Failure(error!)
-            }
-            guard let responseData = data else {
-                let failureReason = "Array could not be serialized because input data was nil."
-                let error = Error.errorWithCode(.DataSerializationFailed, failureReason: failureReason)
-                return .Failure(error)
+                return .failure(error!)
             }
             
-            let JSONResponseSerializer = Request.JSONResponseSerializer(options: .AllowFragments)
-            let result = JSONResponseSerializer.serializeResponse(request, response, responseData, error)
+            let JSONResponseSerializer = DataRequest.jsonResponseSerializer(options: .allowFragments)
+            let result = JSONResponseSerializer.serializeResponse(request, response, data, error)
             
             switch result {
-            case .Success(let value):
+            case .success(let value):
                 let json = SwiftyJSON.JSON(value)
                 var wrappers = Array<MenusWrapper>()
                 
@@ -56,16 +51,27 @@ extension Alamofire.Request {
                     
                     // Attach to list
                     wrappers.append(wrapper)
+                    
                 }
                 
-                return .Success(wrappers)
-            case .Failure(let error):
-                return .Failure(error)
+                return .success(wrappers)
+            case .failure(let error):
+                return .failure(error)
             }
         }
-        
-        return response(responseSerializer: responseSerializer,
-                        completionHandler: completionHandler)
+    }
+    
+    @discardableResult
+    func responseMenuWrappers(
+        queue: DispatchQueue? = nil,
+        completionHandler: @escaping (DataResponse<Array<MenusWrapper>>) -> Void)
+        -> Self
+    {
+        return response(
+            queue: queue,
+            responseSerializer: DataRequest.responseMenusArray(),
+            completionHandler: completionHandler
+        )
     }
 }
 
@@ -73,19 +79,18 @@ extension Alamofire.Request {
 class MenusFetcherService {
     
     class func endpoint() -> String {
-        return "http://igor-rinkovec.from.hr/menza/"
+        return "https://rinkovec.com/menza/"
     }
     
-    private class func getMenusAtPath(completionHandler: (Array<MenusWrapper>?, NSError?) -> Void) {
-        // iOS 9: Replace HTTP with HTTPS
-        Alamofire.request(.GET, MenusFetcherService.endpoint())
-            .responseMenusArray { response in
-                completionHandler(response.result.value, response.result.error)
+    private class func getMenusAtPath(completionHandler: @escaping (Array<MenusWrapper>?, NSError?) -> Void) {
+        Alamofire.request(MenusFetcherService.endpoint())
+            .responseMenuWrappers { (response) in
+                completionHandler(response.result.value, response.result.error as NSError?)
         }
     }
     
-    class func getMenus(completionHandler: (Array<MenusWrapper>?, NSError?) -> Void) {
-        getMenusAtPath(completionHandler)
+    class func getMenus(completionHandler: @escaping (Array<MenusWrapper>?, NSError?) -> Void) {
+        getMenusAtPath(completionHandler: completionHandler)
     }
     
 }

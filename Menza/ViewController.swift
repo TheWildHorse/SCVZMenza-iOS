@@ -26,10 +26,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(
+        NotificationCenter.default.addObserver(
             self,
             selector: #selector(applicationDidBecomeActive),
-            name: UIApplicationDidBecomeActiveNotification,
+            name: NSNotification.Name.UIApplicationDidBecomeActive,
             object: nil)
 
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -37,13 +37,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
     }
     
-    func applicationDidBecomeActive(notification: NSNotification) {
+    @objc func applicationDidBecomeActive(notification: NSNotification) {
         self.loadMenus()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DatePickerSegue" {
-            if let destination = segue.destinationViewController as? DatePickerViewController {
+            if let destination = segue.destination as? DatePickerViewController {
                 destination.availableDays = self.availableDays
                 destination.delegate = self
             }
@@ -55,16 +55,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let tableViewMenus = self.tableViewMenus else {
             return 0
         }
         return tableViewMenus.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "MenuTableViewCell"
-        let cell: MenuTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! MenuTableViewCell
+        let cell: MenuTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! MenuTableViewCell
 
         cell.MenuDescriptionLabel.text = tableViewMenus![indexPath.row].description;
         if(tableViewMenus![indexPath.row].name == "Vegeterian") {
@@ -102,9 +102,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func displayErrorScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc: ErrorViewController = storyboard.instantiateViewControllerWithIdentifier("ErrorScreen") as! ErrorViewController
+        let vc: ErrorViewController = storyboard.instantiateViewController(withIdentifier: "ErrorScreen") as! ErrorViewController
         vc.refreshDelegate = self
-        self.presentViewController(vc, animated: false, completion: nil)
+        self.present(vc, animated: false, completion: nil)
     }
     
     func setActiveDay(index: Int) {

@@ -19,8 +19,9 @@ class DatePickerViewController: UIViewController, UITableViewDelegate, UITableVi
     var availableDays:Array<MenusWrapper>?
 
     @IBOutlet weak var dateTableView: UITableView!
+    
     @IBAction func closeButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
@@ -36,14 +37,14 @@ class DatePickerViewController: UIViewController, UITableViewDelegate, UITableVi
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let availableDays = self.availableDays else {
             return 0
         }
         return availableDays.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //variable type is inferred
         let cell = UITableViewCell()
         cell.textLabel?.text = availableDays![indexPath.row].date;
@@ -51,9 +52,9 @@ class DatePickerViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.delegate!.setActiveDay(indexPath.row)
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate!.setActiveDay(index: indexPath.row)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

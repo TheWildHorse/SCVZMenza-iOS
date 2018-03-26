@@ -17,7 +17,7 @@ class ErrorViewController: UIViewController {
     }
     
     @IBAction func refreshButtonTapped(sender: UIButton) {
-        self.dismissViewControllerAnimated(false, completion: nil)
+        self.dismiss(animated: false, completion: nil)
         self.refreshDelegate!.reloadData()
     }
     
